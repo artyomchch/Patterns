@@ -7,20 +7,26 @@ fun main(args: Array<String>) {
     val ivan = Customer("Иван Иванов", 900)
     val denis = Customer("Денис Денисов", 1100)
 
-    val niceCheckerCart = listOf(LineItem("банан", 20, 10.0),
+    val niceCheckerCart = listOf(
+        LineItem("банан", 20, 10.0),
         LineItem("яблоко", 10, 20.0),
         LineItem("арбуз", 5, 30.0))
 
-    val largeOrderCart = listOf(LineItem("банан", 30, 10.0),
-        LineItem("яблоко", 10, 20.0))
 
     val mediumOrderCart = mutableListOf<LineItem>()
-    1.rangeTo(30).map { mediumOrderCart.add(LineItem(it.toString(), 10, 10.0)) }
+    1.rangeTo(30)
+        .map { mediumOrderCart.add(LineItem(it.toString(), 10, 10.0)) }
+
+
+    val largeOrderCart = listOf(
+        LineItem("банан", 30, 10.0),
+        LineItem("яблоко", 10, 20.0))
 
 
 
 
-    val ivanOrder = Order(ivan, niceCheckerCart, promo = ::nicePromo)
+
+    val ivanOrder = Order(ivan, niceCheckerCart, promo = ::largePromo)
     orderDetails(ivanOrder)
     promoInfo(ivanOrder)
 
@@ -28,13 +34,16 @@ fun main(args: Array<String>) {
     orderDetails(denisOrder)
     promoInfo(denisOrder)
 
-    val denisMedium = Order(ivan, largeOrderCart, promo = ::largePromo)
+
+    val denisMedium = Order(denis, mediumOrderCart, promo = ::mediumPromo)
     orderDetails(denisMedium)
     promoInfo(denisMedium)
 
-    val ivanLarge = Order(ivan, mediumOrderCart, promo = ::mediumPromo)
+    val ivanLarge = Order(ivan, largeOrderCart, promo = ::largePromo)
     orderDetails(ivanLarge)
     promoInfo(ivanLarge)
+
+
 
 
 
@@ -56,7 +65,7 @@ fun main(args: Array<String>) {
 */
 fun nicePromo(order: Order): Double {
     return if (order.customer.fidelityScore > 1000){
-        order.total() * 0.5
+        order.total() * 0.05
     }else {
         0f.toDouble()
     }
