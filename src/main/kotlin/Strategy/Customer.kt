@@ -25,8 +25,7 @@ fun main(args: Array<String>) {
 
 
 
-
-    val ivanOrder = Order(ivan, niceCheckerCart, promo = ::largePromo)
+    val ivanOrder = Order(ivan, niceCheckerCart, promo = ::mediumPromo)
     orderDetails(ivanOrder)
     promoInfo(ivanOrder)
 
@@ -44,17 +43,7 @@ fun main(args: Array<String>) {
     promoInfo(ivanLarge)
 
 
-
-
-
-
 }
-
-
-
-
-
-
 
 
 
@@ -114,7 +103,7 @@ fun findBestPromo(order: Order, promos: List<(Order)->Double>):
 
 
 
-/// Показуха
+///
 
 fun promoInfo(ivanOrder: Order) {
     val promos = listOf(::nicePromo, ::largePromo, ::mediumPromo)
@@ -130,7 +119,7 @@ fun orderDetails(order: Order) {
     println()
     println("Детали заказа ")
     println("Имя покупателя: ${order.customer.name}")
-    println("Расчитанно с помощью: ${order.promo}")
+    //println("Расчитанно с помощью: ${order.promo}")
     for (item in order.cart) {
         println("Продукт: ${item.productName} [ ${item.qtyInKg} ]")
     }

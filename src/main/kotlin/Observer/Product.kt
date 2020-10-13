@@ -7,11 +7,13 @@ data class Product(val name: String, val price: Double): ManBehavior {
     override fun getPrice(course: Int) {
 
         if (course >= courseAnalysis){
-            println("Название: $name   Цена в евро: $price   Курс: $course  Цена в рублях: ${course * price} -> цена повышена"  )
+            println("Название: $name   Цена в евро: $price   " +
+                    "Курс: $course  Цена в рублях: ${course * price} -> цена повышена"  )
             courseAnalysis = course
         }
         else
-            println("Название: $name   Цена в евро: $price   Курс: $course  Цена в рублях: ${course * price} -> цена понижена")
+            println("Название: $name   Цена в евро: $price   " +
+                    "Курс: $course  Цена в рублях: ${course * price} -> цена понижена")
             courseAnalysis = course
     }
 

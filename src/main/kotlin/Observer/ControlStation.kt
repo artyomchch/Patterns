@@ -20,7 +20,6 @@ class ControlStation(){
         product.forEach{
             it.getPrice(course = course)
         }
-
         Thread.sleep(1000)
         updateWeather()
 
