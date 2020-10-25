@@ -7,6 +7,7 @@ class Order(val customer: Customer, val cart: List<LineItem>, val promo: ((Order
     fun finalPrice(): Double {
         val discount = promo?.invoke(this) ?: 0f.toDouble()
         return total() - discount
+
     }
 
 }
