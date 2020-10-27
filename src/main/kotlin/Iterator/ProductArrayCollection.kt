@@ -22,5 +22,7 @@ class ProductArrayCollection {
             return index < collection.count
         }
 
+
+
     }
 }

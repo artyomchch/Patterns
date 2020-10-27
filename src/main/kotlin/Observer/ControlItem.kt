@@ -3,7 +3,7 @@ package Observer
 import java.util.*
 import kotlin.random.Random
 
-class ControlStation(){
+class ControlItem(){
     private val product: MutableList<ManBehavior> = LinkedList()
     var course = 0
 
@@ -15,13 +15,13 @@ class ControlStation(){
         product.remove(manBehavior)
     }
 
-    fun updateWeather(){
+    fun updatePrice(){
         course = Random.nextInt(70, 80)
         product.forEach{
-            it.getPrice(course = course)
+            it.getPrice(course)
         }
-        Thread.sleep(1000)
-        updateWeather()
+        //Thread.sleep(1000)
+      //  updatePrice()
 
     }
 }

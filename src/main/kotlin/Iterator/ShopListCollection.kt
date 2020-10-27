@@ -7,6 +7,15 @@ class ShopListCollection {
         products.add(shop)
     }
 
+    fun move(id: Int): String{
+
+        for (i in products){
+            val parts = products[id].toString().split(" ")
+            println(parts)
+        }
+        return products[id].toString()
+    }
+
     fun createIterator() = ListIterator(this)
 
     class ListIterator(private val collection: ShopListCollection) : Iterator {
