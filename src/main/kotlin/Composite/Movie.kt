@@ -4,16 +4,16 @@ class Movie(val title:String):IMedia {
     private var speed = 1f
 
     override fun play() {
-        println("Now playing: ${title}...")
+        println("Сейчас играет: ${title}...")
     }
 
     override fun displaySubtitle() {
-        println("display subtitle")
+        println("Отображать субтитры")
     }
 
     override fun setPlaySpeed(speed:Float) {
         this.speed = speed
-        println("current play speed set to: $speed")
+        println("Текущая скорость воспроизведения установлена на: $speed")
     }
 
     override fun getName(): String {

@@ -2,6 +2,7 @@ package Composite
 
 class PlayList(val title:String):IMedia {
     var movieList:MutableList<IMedia> = mutableListOf()
+    var nameFilm = title
 
     fun addNewMedia(media:IMedia) = movieList.add(media)
     fun removeMedia(media: IMedia){
@@ -13,7 +14,7 @@ class PlayList(val title:String):IMedia {
     }
 
     override fun displaySubtitle() {
-        println("display certain subtitle")
+        println("Отображать субтитры")
     }
 
     override fun setPlaySpeed(speed: Float) {
@@ -21,6 +22,6 @@ class PlayList(val title:String):IMedia {
     }
 
     override fun getName(): String {
-        return title
+        return nameFilm
     }
 }

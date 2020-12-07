@@ -1,10 +1,10 @@
 package Proxy
 
-fun main(args:Array<String>){
+fun main(){
 
-    var parcel = "SmartPhone" to "North"
-    var parcelDispatcher = ParcelDispatcher()
 
-    parcelDispatcher.dispatchParcel(parcel)
+//    var selQuality = "Some Video" to "1080"
+//    var checkVideo = qualityDistribution()
+//    checkVideo.sendVideo(selQuality)
 
 }
