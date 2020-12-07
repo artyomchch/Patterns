@@ -4,10 +4,7 @@ import Proxy.qualityDistribution
 
 fun main(){
 
-    var selQuality = "Some Video" to "720"
-    var checkVideo = qualityDistribution()
-    checkVideo.sendVideo(selQuality)
-    println()
+
 
 
 
@@ -38,6 +35,12 @@ fun main(){
 
 
     myPlayList.apply {
+        var selQuality = "Some Videos" to "720"
+        var checkVideo = qualityDistribution()
+        checkVideo.sendVideo(selQuality)
+        println()
+
+
         println(actionMoviePlayList.getName())
         actionMoviePlayList.setPlaySpeed(1.2f)
         println()
