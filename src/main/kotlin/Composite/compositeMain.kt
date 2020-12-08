@@ -1,6 +1,6 @@
 package Composite
 
-import Proxy.qualityDistribution
+import Proxy.qualityProxy
 
 fun main(){
 
@@ -36,7 +36,7 @@ fun main(){
 
     myPlayList.apply {
         var selQuality = "Some Videos" to "720"
-        var checkVideo = qualityDistribution()
+        var checkVideo = qualityProxy()
         checkVideo.sendVideo(selQuality)
         println()
 

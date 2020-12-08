@@ -2,7 +2,7 @@ package Proxy
 
 import kotlin.random.Random
 
-class qualityDistribution : IVideo {
+class qualityProxy : IVideo {
     var network = 0
 
     private var quality = listOf(
